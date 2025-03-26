@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f0e3;
+    margin: 0;
+}
+
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-origin: left;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.front {
+    z-index: 3;
+}
+
+.middle {
+    z-index: 2;
+    transform: rotateY(180deg);
+}
+
+.back {
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+/* Page Flip Animations */
+.flip .front {
+    transform: rotateY(-180deg);
+}
+
+.flip .middle {
+    transform: rotateY(0deg);
+}
+
+.flip.flip-2 .middle {
+    transform: rotateY(-180deg);
+}
+
+.flip.flip-2 .back {
+    transform: rotateY(0deg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
