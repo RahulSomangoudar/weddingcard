@@ -11,8 +11,9 @@ body {
     position: relative;
     width: 350px;
     height: 500px;
-    perspective: 1200px;
+/*     perspective: 1200px; */
     cursor: pointer;
+    margin-bottom: 60px;
 }
 
 .page {
